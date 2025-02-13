@@ -19,7 +19,13 @@ def predict(client_id: int):
 
     features = client_data.drop(['TARGET', 'SK_ID_CURR', 'index'], axis=1).values
     prediction = model.predict_proba(features)  # La probabilité
-    return {"client_id": client_id, "probability": prediction[0][1]}  # Renvoie la probabilité
+
+    # Définition du seuil
+    threshold = 0.6  
+    predicted_probability = prediction[0][1]
+    decision = "Crédit accepté" if predicted_probability >= threshold else "Crédit refusé"
+
+    return {"client_id": client_id, "probability": predicted_probability, "decision" : decision}
 
 
 
