@@ -3,7 +3,7 @@ from fastapi import FastAPI
 import pandas as pd
 import numpy as np
 
-dataframe = pd.read_csv('/data/df.csv')
+dataframe = pd.read_csv('data/df.csv')
 app = FastAPI()
 
 # Chargement du modèle :
