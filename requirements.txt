@@ -7,3 +7,4 @@ lightgbm==4.6.0
 pytest
 requests
 shap==0.46.0
+setuptools
